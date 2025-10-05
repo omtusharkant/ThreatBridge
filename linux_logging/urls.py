@@ -22,4 +22,5 @@ from log_collector import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('api/log_collector/', views.log_collector, name='log_collector'),
 ]

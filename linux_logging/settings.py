@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-*ik34xp8-)#i&e)(#d2_-*wyde3^b6twu_z(f@d2#32#=^he^w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -78,8 +78,12 @@ WSGI_APPLICATION = "linux_logging.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "threatbridge",
+        "USER": "threatbridgeuser",
+        "PASSWORD": "root",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
@@ -127,3 +131,5 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOG_COLLECTOR_API_KEY = "dG9tbWFyY3VzYnJ1dA=="
